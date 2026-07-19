@@ -52,7 +52,7 @@ I'm working with a pretrained satellite imagery transformer and specializing it 
       {
     date: 'JUN 03 \'26',
     title: 'Started Research Internship',
-    image: null,
+    image: '/images/FM1.png',
     whatHappened:
       'Joined the PESU Research Foundation internship and began exploring the field of Earth Foundation Models. The first few weeks were dedicated to understanding remote sensing, satellite imagery, and the rapidly growing landscape of foundation models for Earth observation.',
     whatIFiguredOut:
@@ -61,7 +61,7 @@ I'm working with a pretrained satellite imagery transformer and specializing it 
   {
     date: 'JUN 10 \'26',
     title: 'Literature Review & Research Direction',
-    image: null,
+    image: '/images/FM2.png',
     whatHappened:
       'Read and compared recent Earth Foundation Models including SatMAE, DOFA, Prithvi, Clay, TerraMind and related benchmarks. Explored different pretraining strategies and identified the research direction of adapting pretrained models for Indian satellite imagery.',
     whatIFiguredOut:
@@ -69,37 +69,37 @@ I'm working with a pretrained satellite imagery transformer and specializing it 
   },
   {
     date: 'JUNE 25 \'26',
-    title: 'Built the Data Pipeline',
-    image: null,
+    title: 'Model Agnostic Dataset Collection Pipeline',
+    image: '/images/FM3.png',
     whatHappened:
-      'Moved from reading papers to implementation by building the preprocessing pipeline. Learned how satellite imagery is prepared, normalized, and transformed into the format required by Earth Foundation Models.',
+      'Moved from reading papers to implementation by building the dataset download pipeline. Performed basic preprocessing.',
     whatIFiguredOut:
-      'Most of the complexity in ML projects lies in data preparation. A reliable preprocessing pipeline is just as important as the model itself.',
+      'There existed no datasets for Indian satellite imagery in the format required by these models. Built and optimized a preprocessing workflow to create the datasets needed for experimentation.',
   },
   {
     date: 'JUL 03 \'26',
-    title: 'Defined the Research Problem',
-    image: null,
+    title: 'Narrowed Research Scope',
+    image: '/images/FM4.png',
     whatHappened:
       'After discussions with my mentor, refined the project into adapting a pretrained Earth observation foundation model for Indian geospatial data using parameter-efficient fine-tuning techniques.',
     whatIFiguredOut:
-      'A good research project is driven by a clear question. Narrowing the scope made the work far more focused and achievable.',
+      'Narrowing the scope made the work far more focused and achievable. Now focusing on Karnataka and Andhra Pradesh regions and adding weather fusion data to the model input. This will allow the model to learn how weather patterns affect satellite imagery and improve its performance on Indian geospatial data.',
   },
   {
   date: 'JUL 07 \'26',
   title: 'Selected the Foundation Model',
-  image: null,
+  image: '/images/FM5.png',
   whatHappened:
-    'Evaluated multiple Earth Foundation Models and, after discussions with my mentor, narrowed the project to a single model that best aligned with the research objectives. This shifted the focus from surveying the landscape to building a complete adaptation pipeline.',
+    'Evaluated multiple Earth Foundation Models and selected Prithvi for further experimentation.',
   whatIFiguredOut:
     'Trying to compare every promising model spreads effort too thin. Focusing on one strong baseline makes it much easier to iterate, understand failures, and produce meaningful research.',
 },
   {
     date: 'JUL 15 \'26',
-    title: 'Preparing for Fine-Tuning',
-    image: null,
+    title: 'Verified Preprocessing and Continual Pretraining Loop',
+    image: '/images/FM6.png',
     whatHappened:
-      'Completed the preprocessing workflow, selected the foundation model, and prepared the datasets required for experimentation. The project transitioned from understanding the field to building the actual research pipeline.',
+      'Completed the preprocessing workflow for Prithvi and loaded checkpoint from huggingface. Also added LoRA layers to the model and started training on Indian satellite imagery. Debugged it on a small subset of the dataset before scaling up to the full dataset.',
     whatIFiguredOut:
       'Research is iterative. Every paper, experiment, and preprocessing decision contributed to a stronger foundation before training even began.',
   },
@@ -143,7 +143,7 @@ I'm working with a pretrained satellite imagery transformer and specializing it 
       {
   date: 'JUL 15\'26',
   title: 'Project Kickoff',
-  image: '/images/ThreadStart.png',
+  image: '/images/Try.png',
   whatHappened:
     'Thread began as an idea born from the frustration of scattered notes, browser tabs, and disconnected project documents. Instead of jumping straight into development, I decided to first understand the technologies behind each feature and design the architecture intentionally.',
   whatIFiguredOut:

@@ -10,6 +10,7 @@ export default function Header() {
         figuring out how things work, and building things I'd actually want
         to use.
       </p>
+      
     </div>
   );
 }
