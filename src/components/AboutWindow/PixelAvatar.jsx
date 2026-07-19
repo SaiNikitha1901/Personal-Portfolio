@@ -37,7 +37,6 @@ export default function PixelAvatar() {
     src="/images/avatar.png"
     alt="Pixel portrait of Nikitha"
     className="pixel-avatar"
-    alt="Pixel portrait of Nikitha"
   />
   );
 }
