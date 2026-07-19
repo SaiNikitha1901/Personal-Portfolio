@@ -1,0 +1,109 @@
+.project-header {
+  display: flex;
+  gap: var(--space-5);
+  margin-bottom: var(--space-5);
+  flex-wrap: wrap;
+}
+
+.project-header-text {
+  flex: 1 1 280px;
+}
+
+.project-mission-number {
+  font-family: var(--font-display);
+  font-size: 10px;
+  color: var(--color-magenta);
+}
+
+.project-title {
+  font-size: 22px;
+  margin: var(--space-2) 0;
+}
+
+.project-subtitle {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--color-ink-soft);
+  font-weight: 400;
+}
+
+.project-tags {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.project-short-desc {
+  color: var(--color-ink-soft);
+  margin: 0;
+}
+
+.project-visual {
+  flex: 0 0 200px;
+  height: 140px;
+  background-size: cover;
+  background-position: center;
+  /* Placeholder pattern — replace by setting `image` on the project in
+     data/projects.js. */
+  background-image: repeating-linear-gradient(
+    45deg,
+    var(--color-chrome-soft),
+    var(--color-chrome-soft) 6px,
+    var(--color-chrome) 6px,
+    var(--color-chrome) 12px
+  );
+  border: 2px solid var(--color-chrome);
+}
+
+.project-tabs {
+  display: flex;
+  border-top: var(--border-thin);
+  border-bottom: var(--border-thin);
+  margin-bottom: var(--space-5);
+}
+
+.project-tab {
+  flex: 1;
+  background: var(--color-canvas);
+  border: none;
+  border-right: 2px solid var(--color-chrome);
+  padding: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-ink-soft);
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.project-tab:last-child {
+  border-right: none;
+}
+
+.project-tab--active {
+  background: var(--color-chrome);
+  color: var(--color-paper);
+}
+
+.project-overview p {
+  margin-bottom: var(--space-4);
+  color: var(--color-ink);
+}
+
+.project-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.project-links a {
+  font-weight: 700;
+}
+
+.project-links-empty {
+  color: var(--color-ink-soft);
+  font-style: italic;
+}

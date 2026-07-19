@@ -1,0 +1,35 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-3);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  border: 2px solid var(--color-chrome);
+  background: var(--color-paper);
+  color: var(--color-chrome);
+}
+
+.tag--green {
+  background: var(--color-green);
+  border-color: var(--color-chrome);
+  color: var(--color-chrome);
+}
+
+.tag--amber {
+  background: var(--color-amber);
+  border-color: var(--color-chrome);
+  color: var(--color-chrome);
+}
+
+.tag--magenta {
+  background: var(--color-magenta);
+  border-color: var(--color-chrome);
+  color: var(--color-paper);
+}
+
+.tag--neutral {
+  background: var(--color-paper);
+}

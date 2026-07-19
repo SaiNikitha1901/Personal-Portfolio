@@ -1,0 +1,121 @@
+.experience-layout {
+  display: flex;
+  gap: var(--space-5);
+  min-height: 320px;
+}
+
+.experience-sidebar {
+  flex: 0 0 160px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.experience-folder {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: var(--color-canvas);
+  border: 2px solid var(--color-chrome);
+  padding: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--color-ink);
+  text-align: left;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.experience-folder-icon {
+  width: 14px;
+  height: 11px;
+  background: var(--color-amber);
+  border: 2px solid var(--color-chrome);
+  flex-shrink: 0;
+}
+
+.experience-folder:hover {
+  background: var(--color-canvas-alt);
+}
+
+.experience-folder--active {
+  background: var(--color-chrome);
+  color: var(--color-paper);
+}
+
+.experience-folder--active .experience-folder-icon {
+  background: var(--color-magenta);
+}
+
+.experience-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.experience-content-heading {
+  font-size: 14px;
+  margin-bottom: var(--space-4);
+}
+
+.experience-empty {
+  color: var(--color-ink-soft);
+  font-style: italic;
+}
+
+.experience-entry-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.experience-entry {
+  border-bottom: 2px solid var(--color-canvas-alt);
+  padding-bottom: var(--space-4);
+}
+
+.experience-entry:last-child {
+  border-bottom: none;
+}
+
+.experience-entry-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-3);
+}
+
+.experience-entry-title {
+  font-weight: 700;
+}
+
+.experience-entry-period {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-ink-soft);
+  white-space: nowrap;
+}
+
+.experience-entry-org {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-magenta);
+  margin: 2px 0 var(--space-2) 0;
+}
+
+.experience-entry-desc {
+  margin: 0;
+  color: var(--color-ink-soft);
+}
+
+@media (max-width: 600px) {
+  .experience-layout {
+    flex-direction: column;
+  }
+  .experience-sidebar {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,33 @@
+/* .pixel-avatar {
+  width: 190px;
+  height: auto;
+  display: block;
+  margin: 0 auto var(--space-5) auto;
+  margin-top: 12px;
+  shape-rendering: pixelated;
+  
+} */
+.pixel-avatar {
+  width: 180px;
+  height: auto;
+  display: block;
+  margin: 12px auto var(--space-5) auto;
+
+  image-rendering: pixelated;
+
+  animation: avatar-idle 6s ease-in-out infinite;
+}
+
+@keyframes avatar-idle {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}

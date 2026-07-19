@@ -1,0 +1,61 @@
+/* ============================================================================
+   DESIGN TOKENS
+   ============================================================================
+   Every color, font, spacing value, and border style used anywhere on the
+   site is defined here as a CSS variable. If you want to retheme the whole
+   portfolio (e.g. try a different accent color), this is the only file you
+   should need to touch.
+   ========================================================================== */
+
+:root {
+  /* ---- Colors ----
+     Desktop = the homepage background. Chrome = window borders/title bars.
+     Paper = the inside of a window. The three accents (green/magenta/amber)
+     are used consistently for meaning, not decoration:
+       green   = completed / active / positive
+       amber   = in progress / attention
+       magenta = highlight / hover / interactive */
+  --color-canvas: #ede9dd;
+  --color-canvas-alt: #e2dcc9;
+  --color-ink: #1a1210;
+  --color-ink-soft: #5c5347;
+  --color-chrome: #2b1f3d;
+  --color-chrome-soft: #4a3868;
+  --color-paper: #faf7f0;
+  --color-green: #3fbf7f;
+  --color-magenta: #d63e8c;
+  --color-amber: #d98b2b;
+  --color-shadow: rgba(43, 31, 61, 0.28);
+
+  /* ---- Type ----
+     --font-display is a pixel/bitmap face. Use it sparingly (titles, tags,
+     mission numbers) — it is very hard to read in long paragraphs. */
+  --font-display: 'Press Start 2P', monospace;
+  --font-mono: 'Space Mono', monospace;
+  --font-body: 'Space Grotesk', system-ui, sans-serif;
+
+  /* ---- Spacing scale ----
+     Stick to these instead of one-off pixel values so spacing stays
+     consistent across components. */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  /* ---- Borders / shape ----
+     Sharp corners on purpose — rounded corners read as "generic modern app"
+     rather than "old computer interface". */
+  --radius-sm: 2px;
+  --border-thin: 2px solid var(--color-chrome);
+  --border-thick: 4px solid var(--color-chrome);
+
+  /* ---- Motion ----
+     Centralized so it's easy to make the whole site snappier/slower, and so
+     the prefers-reduced-motion override in global.css can zero these out. */
+  --transition-fast: 120ms ease;
+  --transition-medium: 220ms ease;
+}

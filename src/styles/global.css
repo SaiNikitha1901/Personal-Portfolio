@@ -1,0 +1,78 @@
+@import './tokens.css';
+
+/* ============================================================================
+   GLOBAL RESET + BASE STYLES
+   ============================================================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.55;
+  /* Faint pixel-dot texture on the desktop background — cheap way to make
+     the canvas feel less like a flat empty rectangle without any image
+     assets. Purely decorative, so it's safe to delete if you don't like it. */
+  background-image: radial-gradient(var(--color-canvas-alt) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-family: var(--font-display);
+  color: var(--color-chrome);
+  line-height: 1.4;
+}
+
+p {
+  margin: 0 0 var(--space-4) 0;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+a {
+  color: var(--color-magenta);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Consistent focus ring for keyboard users across every interactive element
+   in the site — buttons, links, tabs, tiles, etc. */
+:focus-visible {
+  outline: 3px solid var(--color-magenta);
+  outline-offset: 2px;
+}
+
+/* Respect visitors who have asked their OS/browser to reduce motion.
+   This blanket rule covers every animation/transition in the app, so
+   individual components don't each need their own media query. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

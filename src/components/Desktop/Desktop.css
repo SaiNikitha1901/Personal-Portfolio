@@ -1,0 +1,339 @@
+/* ============================================================================
+   DESKTOP (Homepage)
+   ============================================================================ */
+
+.desktop {
+  max-width: 1120px;
+  margin: var(--space-8) auto;
+  background: var(--color-paper);
+  border: var(--border-thick);
+  box-shadow: 12px 12px 0 var(--color-shadow);
+  padding: var(--space-7);
+}
+
+/* ---- Header + Currently row ---- */
+
+.desktop-top {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-8);
+}
+
+.desktop-name {
+  font-size: 40px;
+  margin-bottom: var(--space-4);
+}
+
+.desktop-intro {
+  max-width: 420px;
+  font-size: 17px;
+  color: var(--color-ink-soft);
+  margin: 0;
+}
+
+.currently-panel {
+  /* No border/background/padding here on purpose — this is a plain
+     sidebar column, not a framed dashboard. Each widget below carries its
+     own border, same as the original design. A fixed width (rather than
+     min-width) is still needed so long headings wrap inside the column
+     instead of stretching it wider. */
+  width: 280px;
+  flex-shrink: 0;
+}
+
+.currently-heading {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.currently-heading h2 {
+  font-size: 13px;
+}
+
+.currently-updated {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--color-ink-soft);
+  white-space: nowrap;
+}
+
+.pixel-dots {
+  display: flex;
+  gap: 3px;
+}
+
+.pixel-dots i {
+  width: 5px;
+  height: 5px;
+  background: var(--color-green);
+  display: inline-block;
+  animation: dot-blink 1.2s infinite;
+}
+
+.pixel-dots i:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.pixel-dots i:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes dot-blink {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.currently-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.currently-widget {
+  border: 2px solid var(--color-chrome);
+  background: var(--color-canvas);
+}
+
+/* Shared by both the clickable (<a>) and static (<div>) widget variants so
+   the layout is identical either way — only whether it's a link changes. */
+.currently-widget-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--space-2);
+  text-decoration: none;
+  color: inherit;
+}
+
+.currently-item-title {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-magenta);
+}
+
+.currently-item-heading {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-ink);
+  transition: color var(--transition-fast);
+}
+
+.currently-item-description {
+  margin: 0;
+  font-size: 12px;
+  color: var(--color-ink-soft);
+}
+
+.currently-widget a:hover .currently-item-heading {
+  color: var(--color-magenta);
+}
+
+/* ---- Workspace ---- */
+
+.workspace-hint {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: var(--space-3);
+}
+
+.workspace-row {
+  display: flex;
+  gap: var(--space-5);
+  flex-wrap: wrap;
+}
+
+.work-tile {
+  flex: 2 1 420px;
+  border: var(--border-thin);
+  background: var(--color-canvas);
+  padding: var(--space-4);
+}
+
+.work-tile-heading {
+  font-size: 14px;
+  margin-bottom: var(--space-3);
+}
+
+/* Native horizontal scroll — deliberately no JS carousel logic (see brief,
+   "avoid unnecessary complexity"). Adding a project to data/projects.js
+   just adds another card here; the row keeps scrolling either way. */
+.work-scroll {
+  display: flex;
+  gap: var(--space-4);
+  overflow-x: auto;
+  padding-bottom: var(--space-2);
+  scroll-snap-type: x proximity;
+}
+
+.work-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+.work-scroll::-webkit-scrollbar-thumb {
+  background: var(--color-chrome);
+}
+.work-scroll::-webkit-scrollbar-track {
+  background: var(--color-canvas-alt);
+}
+
+.project-preview-card {
+  flex: 0 0 220px;
+  scroll-snap-align: start;
+  background: var(--color-paper);
+  border: 2px solid var(--color-chrome);
+  text-align: left;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.project-preview-card:hover,
+.project-preview-card:focus-visible {
+  transform: translate(-3px, -3px);
+  box-shadow: 5px 5px 0 var(--color-shadow);
+}
+
+.project-preview-visual {
+  height: 100px;
+  background-size: cover;
+  background-position: center;
+  /* Diagonal stripes stand in for a real project screenshot until one is
+     added via the `image` field in data/projects.js. */
+  background-image: repeating-linear-gradient(
+    45deg,
+    var(--color-chrome-soft),
+    var(--color-chrome-soft) 6px,
+    var(--color-chrome) 6px,
+    var(--color-chrome) 12px
+  );
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-2);
+}
+
+.project-preview-mission {
+  font-family: var(--font-display);
+  font-size: 9px;
+  color: var(--color-paper);
+  background: var(--color-chrome);
+  padding: 3px 6px;
+}
+
+.project-preview-body {
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+.project-preview-title {
+  font-size: 13px;
+}
+
+.project-preview-desc {
+  font-size: 13px;
+  color: var(--color-ink-soft);
+  margin: 0;
+}
+
+.app-tile-group {
+  flex: 1 1 160px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.app-tile {
+  border: var(--border-thin);
+  background: var(--color-canvas);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast),
+    background var(--transition-fast);
+}
+
+.app-tile:hover,
+.app-tile:focus-visible {
+  transform: translate(-3px, -3px);
+  box-shadow: 5px 5px 0 var(--color-shadow);
+  background: var(--color-canvas-alt);
+}
+
+.app-tile-label {
+  font-family: var(--font-display);
+  font-size: 12px;
+  color: var(--color-chrome);
+}
+
+.app-tile-hint {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-ink-soft);
+}
+
+/* ---- Link bar ---- */
+
+.link-bar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-8);
+  padding-top: var(--space-5);
+  border-top: 2px solid var(--color-canvas-alt);
+  font-family: var(--font-mono);
+  font-size: 14px;
+}
+
+.link-bar a {
+  text-decoration: none;
+  color: var(--color-chrome);
+  font-weight: 700;
+}
+
+.link-bar a:hover {
+  color: var(--color-magenta);
+}
+
+.link-bar-divider {
+  color: var(--color-ink-soft);
+  margin-left: var(--space-3);
+}
+
+/* ---- Basic responsive fallback (desktop-first, see brief section 13) ---- */
+
+@media (max-width: 720px) {
+  .desktop {
+    padding: var(--space-4);
+    margin: var(--space-4);
+  }
+  .desktop-top {
+    flex-direction: column;
+  }
+  .workspace-row {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,20 @@
+.rabbit {
+  position: absolute;
+  width: 40px;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+  /* No easing on left/top — this needs to track the mouse 1:1 with no lag,
+     since it's standing in for the real cursor. Only opacity gets a
+     transition, for a soft fade in/out as the mouse enters/leaves the
+     field (see Rabbit.jsx's mousemove/mouseleave handlers). */
+  transition: opacity var(--transition-fast);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.rabbit-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}

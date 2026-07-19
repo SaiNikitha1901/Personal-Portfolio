@@ -1,0 +1,109 @@
+.rabbit-hole-intro {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--color-ink-soft);
+  margin-bottom: var(--space-5);
+}
+
+.rabbit-hole-field {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  border: var(--border-thin);
+  background-color: var(--color-canvas);
+  overflow: hidden;
+  /* A sparse, static dot pattern standing in for "a few tiny pixel-like
+     stars" now that the field is otherwise empty — same technique as the
+     body background texture in global.css, just spaced further apart and
+     with no animation, so it stays calm rather than busy. */
+  background-image: radial-gradient(var(--color-chrome-soft) 1px, transparent 1px);
+  background-size: 64px 64px;
+  background-position: 12px 18px;
+  /* Hides the real cursor while it's inside this field ONLY — Rabbit.jsx
+     draws a tiny rabbit sprite in its place (see that component). Moving
+     the mouse outside this element, or closing the window, brings the
+     normal cursor straight back since this rule no longer applies. */
+  cursor: none;
+}
+
+@media (max-width: 720px) {
+  .rabbit-hole-field {
+    height: 320px;
+  }
+}
+
+/* ---- Topic popup (shown when a portal is clicked) ---- */
+
+.topic-popup {
+  margin-top: var(--space-4);
+  border: var(--border-thin);
+  background: var(--color-canvas);
+  padding: var(--space-4);
+  animation: window-pop-in var(--transition-medium);
+}
+
+.topic-popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-display);
+  font-size: 11px;
+  color: var(--color-chrome);
+  margin-bottom: var(--space-2);
+}
+
+.topic-popup-close {
+  background: none;
+  border: none;
+  font-size: 18px;
+  line-height: 1;
+  color: var(--color-ink-soft);
+}
+
+.topic-popup-close:hover {
+  color: var(--color-magenta);
+}
+
+.topic-popup-status {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--color-magenta);
+  margin-bottom: var(--space-3);
+}
+
+.topic-popup-section {
+  margin-bottom: var(--space-3);
+}
+
+.topic-popup-section:last-child {
+  margin-bottom: 0;
+}
+
+.topic-popup-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--color-ink-soft);
+  margin-bottom: 2px;
+}
+
+.topic-popup-section p {
+  margin: 0;
+}
+
+.topic-popup-resources {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.topic-popup-resources a {
+  font-weight: 700;
+}

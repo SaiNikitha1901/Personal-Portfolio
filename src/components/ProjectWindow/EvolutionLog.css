@@ -1,0 +1,160 @@
+.evolution-empty {
+  color: var(--color-ink-soft);
+  font-style: italic;
+}
+
+.evolution-log {
+  display: flex;
+  flex-direction: column;
+}
+
+.evolution-row-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.evolution-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--space-4);
+}
+
+/* This single line is what actually creates the snake effect — every other
+   row visually reverses left-to-right without us touching the underlying
+   data order (see EvolutionLog.jsx for the row-alternation logic). */
+.evolution-row--reversed {
+  flex-direction: row-reverse;
+}
+
+.evolution-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  padding: var(--space-2);
+}
+
+.evolution-node-dot {
+  width: 16px;
+  height: 16px;
+  background: var(--color-paper);
+  border: 3px solid var(--color-chrome);
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.evolution-node:hover .evolution-node-dot,
+.evolution-node--active .evolution-node-dot {
+  background: var(--color-magenta);
+  transform: scale(1.15);
+}
+
+.evolution-node-date {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-ink-soft);
+  white-space: nowrap;
+}
+
+/* Short vertical connector between rows, placed on whichever edge the path
+   continues from. */
+.evolution-connector {
+  width: 4px;
+  height: 28px;
+  background: var(--color-chrome);
+  margin: 2px 0;
+}
+
+.evolution-connector--right {
+  align-self: flex-end;
+  margin-right: 22px;
+}
+
+.evolution-connector--left {
+  align-self: flex-start;
+  margin-left: 22px;
+}
+
+.milestone-popup {
+  margin: var(--space-3) 0 var(--space-5) 0;
+  border: var(--border-thin);
+  background: var(--color-canvas);
+  padding: var(--space-4);
+  animation: window-pop-in var(--transition-medium);
+}
+
+.milestone-popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-ink-soft);
+  margin-bottom: var(--space-2);
+}
+
+.milestone-popup-close {
+  background: none;
+  border: none;
+  font-size: 18px;
+  line-height: 1;
+  color: var(--color-ink-soft);
+}
+
+.milestone-popup-close:hover {
+  color: var(--color-magenta);
+}
+
+.milestone-popup-title {
+  font-size: 14px;
+  margin-bottom: var(--space-3);
+}
+
+.milestone-popup-image {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  margin-bottom: var(--space-3);
+  border: 2px solid var(--color-chrome);
+
+}
+
+.milestone-popup-image--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: repeating-linear-gradient(
+    45deg,
+    var(--color-canvas-alt),
+    var(--color-canvas-alt) 8px,
+    var(--color-paper) 8px,
+    var(--color-paper) 16px
+  );
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-ink-soft);
+}
+
+.milestone-popup-section {
+  margin-bottom: var(--space-3);
+}
+
+.milestone-popup-section:last-child {
+  margin-bottom: 0;
+}
+
+.milestone-popup-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--color-magenta);
+  margin-bottom: 2px;
+}
+
+.milestone-popup-section p {
+  margin: 0;
+}

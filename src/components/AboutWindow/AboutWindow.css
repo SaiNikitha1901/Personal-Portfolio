@@ -1,0 +1,71 @@
+.about-bio p {
+  color: var(--color-ink);
+}
+
+.about-bio p:last-child {
+  margin-bottom: 0;
+}
+
+.about-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 2px solid var(--color-canvas-alt);
+}
+
+.about-palette {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+
+.about-swatch {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--color-chrome);
+}
+
+.about-swatch--0 {
+  background: var(--color-green);
+}
+.about-swatch--1 {
+  background: var(--color-magenta);
+}
+.about-swatch--2 {
+  background: var(--color-amber);
+}
+
+.about-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.about-tab {
+  background: var(--color-canvas);
+  border: 2px solid var(--color-chrome);
+  padding: var(--space-2) var(--space-3);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-chrome);
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.about-tab:hover,
+.about-tab--active {
+  background: var(--color-chrome);
+  color: var(--color-paper);
+}
+
+.about-tab-note {
+  margin-top: var(--space-3);
+  margin-bottom: 0;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--color-ink-soft);
+  font-style: italic;
+}
