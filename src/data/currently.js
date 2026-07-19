@@ -20,26 +20,35 @@
 // display, so you only ever need to edit this one string.
 export const lastUpdated = '2026-07-18';
 
+// ============================================================================
+// "CURRENTLY..." PANEL DATA
+// ============================================================================
+// The three widgets in the top-right of the homepage. This is meant to be a
+// live-feeling snapshot of what you're doing right now — update it whenever
+// that changes. No API integration on purpose (see README) — just edit the
+// strings below and redeploy.
+//
+// `link` is optional — leave it null for a plain text widget, or set it to
+// a URL (like your LeetCode profile) to make the widget clickable.
+// ============================================================================
+
 export const currentlyItems = [
   {
     id: 'project',
-    title: 'Current Project',
-    heading: 'Earth Foundation Model',
-    description: 'Building the continual pretraining pipeline.',
+    label: 'Current project: ',
+    value: 'Earth Foundation Model — continual pretraining pipeline',
     link: null,
   },
   {
     id: 'research',
-    title: 'Research / Coursework',
-    heading: 'Satellite Imagery Foundation Models',
-    description: 'Specializing pretrained models for Indian geospatial data.',
+    label: 'Learning: ',
+    value: 'Docker',
     link: null,
   },
   {
     id: 'dsa',
-    title: 'DSA',
-    heading: "Striver's A2Z — Graphs",
-    description: 'Grinding problems on LeetCode.',
-    link: 'https://leetcode.com/YOUR-USERNAME',
+    label: 'DSA: ',
+    value: "Working through Striver's A2Z — Arrays",
+    link: null,
   },
 ];

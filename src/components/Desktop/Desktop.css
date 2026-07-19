@@ -34,13 +34,7 @@
 }
 
 .currently-panel {
-  /* No border/background/padding here on purpose — this is a plain
-     sidebar column, not a framed dashboard. Each widget below carries its
-     own border, same as the original design. A fixed width (rather than
-     min-width) is still needed so long headings wrap inside the column
-     instead of stretching it wider. */
-  width: 280px;
-  flex-shrink: 0;
+  min-width: 280px;
 }
 
 .currently-heading {
@@ -52,14 +46,6 @@
 
 .currently-heading h2 {
   font-size: 13px;
-}
-
-.currently-updated {
-  margin-left: auto;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  color: var(--color-ink-soft);
-  white-space: nowrap;
 }
 
 .pixel-dots {
@@ -104,43 +90,32 @@
 .currently-widget {
   border: 2px solid var(--color-chrome);
   background: var(--color-canvas);
+  padding: 14px 16px;;
 }
 
-/* Shared by both the clickable (<a>) and static (<div>) widget variants so
-   the layout is identical either way — only whether it's a link changes. */
-.currently-widget-inner {
+.currently-widget a {
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  padding: var(--space-2);
+  gap: 4px;
   text-decoration: none;
   color: inherit;
 }
 
-.currently-item-title {
+.currently-label {
   font-family: var(--font-mono);
-  font-size: 9px;
-  font-weight: 700;
+  font-size: 14px;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: var(--color-magenta);
-}
-
-.currently-item-heading {
-  margin: 0;
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--color-ink);
-  transition: color var(--transition-fast);
-}
-
-.currently-item-description {
-  margin: 0;
-  font-size: 12px;
+  letter-spacing: 0.4px;
   color: var(--color-ink-soft);
 }
 
-.currently-widget a:hover .currently-item-heading {
+.currently-value {
+  font-size: 11px;
+  font-weight: 600;
+  transition: color var(--transition-fast);
+}
+
+.currently-widget a:hover .currently-value {
   color: var(--color-magenta);
 }
 
