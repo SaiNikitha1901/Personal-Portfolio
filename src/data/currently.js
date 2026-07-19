@@ -18,7 +18,7 @@
 // Shown next to the "Currently" heading as "Updated <date>". Just the date
 // you last touched this file, in YYYY-MM-DD — the component formats it for
 // display, so you only ever need to edit this one string.
-export const lastUpdated = '2026-07-18';
+export const lastUpdated = '2026-07-19';
 
 // ============================================================================
 // "CURRENTLY..." PANEL DATA

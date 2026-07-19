@@ -39,9 +39,23 @@
 
 .currently-heading {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-3);
+}
+
+.currently-heading-left {
+  display: flex;
   align-items: center;
   gap: var(--space-2);
-  margin-bottom: var(--space-3);
+}
+
+.currently-updated {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--color-ink-soft);
+  text-transform: uppercase;
+  opacity: 0.8;
 }
 
 .currently-heading h2 {
