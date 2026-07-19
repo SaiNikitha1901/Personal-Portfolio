@@ -24,7 +24,7 @@ export default function Workspace() {
 
   return (
     <div className="workspace">
-      <div className="workspace-hint">old computer workspace</div>
+      <div className="workspace-hint">My workspace</div>
 
       <div className="workspace-row">
         <section className="work-tile" aria-label="Work">
